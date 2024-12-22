@@ -49,13 +49,13 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--slate-100);
   background-color: var(--color-bg);
   font-family: var(--ff-outfit);
-  /* height: 700vh; */
 }
 
 button {
@@ -84,9 +84,9 @@ a {
 
 .headline {
   font-size: var(--headline-sm);
-  letter-spacing: 2px;
+  letter-spacing: 1.6px;
   line-height: 1.4;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .title {
@@ -273,7 +273,6 @@ a {
 }
 
 .tools-item {
-  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -449,8 +448,8 @@ a {
 
 .about .img-box {
   position: relative;
-  width: 335px;
-  height: 415px;
+  width: 320px;
+  height: 410px;
   background: #0c1022;
   overflow: hidden;
   display: flex;
@@ -485,8 +484,8 @@ a {
 }
 
 .img-box .img-banner {
-  width: 320px;
-  height: 400px;
+  width: 300px;
+  height: 390px;
   z-index: 1;
   overflow: hidden;
   border-radius: 12px 90px 12px 90px;
@@ -506,13 +505,121 @@ a {
 /*
 =====> Media Queries <===== 
  */
+
+/* Responsive for large than 576px screnn */
+@media (min-width: 576px) {
+  /*
+  =====> Hero Section <===== 
+   */
+  .hero .box-img {
+    width: 330px;
+    height: 330px;
+  }
+
+  /*
+  =====> Tools Section <===== 
+   */
+  .tools {
+    margin-top: 160px;
+  }
+  .tools-item .tools-icons .tools-icon {
+    width: 65px;
+    height: 65px;
+  }
+
+  /*
+  =====> About Section <===== 
+   */
+  .about .img-box {
+    width: 380px;
+    height: 470px;
+  }
+
+  .img-box .img-banner {
+    width: 360px;
+    height: 450px;
+  }
+}
+
 /* Responsive for large than 768px screen */
 @media (min-width: 768px) {
   /*
+  =====> Reused Style <===== 
+   */
+  .container {
+  }
+  /*
+  =====> Header Section <===== 
+   */
+  .open-btn,
+  .close-btn {
+    display: none;
+  }
+  .navbar .nav-menu {
+    top: 20px;
+    left: 30px;
+    background-color: transparent;
+    flex-direction: row;
+  }
+
+  .nav-menu .navbar-list {
+    font-size: 18px;
+    color: var(--slate-100);
+  }
+
+  /*
+  =====> Hero Section <===== 
+   */
+  .hero {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    place-items: center;
+    gap: 30px;
+    padding-top: var(--padding-top-md);
+    padding-bottom: 60px;
+  }
+
+  /*
+  =====> Tools Section <===== 
+   */
+
+  .tools .tools-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2;
+    gap: 35px 25px;
+  }
+
+  .tools-item .tools-icons {
+    margin-inline: auto;
+  }
+
+  .tools-item .tools-icons .tools-icon {
+    width: 60px;
+    height: 60px;
+    /* background-color: red; */
+  }
+
+  /*
   =====> Projects Section <=====  
    */
+  .projects {
+    padding-top: 120px;
+  }
   .project-item {
     min-width: calc(50% - 15px);
+  }
+
+  /*
+  =====> About Section <===== 
+   */
+  .about {
+    padding-top: var(--padding-top-md);
+  }
+  .about .about-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.5fr;
+    place-items: center;
   }
 }
 
